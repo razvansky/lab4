@@ -1,43 +1,43 @@
 package p1;
 
-import p1.Echipamente;
-
-public class Imprimanta extends Echipamente{
-    private int ppm;
-    private String rez;
-    private int p_car;
-    private boolean color;
-    public Imprimanta(String nume, int nr_inv, float pret,String zona_inv,String stare,String tip,int ppm,String rez, int p_car,boolean color) {
+public class Copiator extends Echipamente{
+    private int p_ton;
+    private String format;
+    public Copiator(String nume, int nr_inv, float pret, String zona_inv, String stare, String tip, int p_ton, String format) {
         super(nume,nr_inv,pret,zona_inv,stare,tip);
-        this.ppm = ppm;
-        this.rez = rez;
-        this.p_car = p_car;
-        this.color = color;
+        this.p_ton = p_ton;
+        this.format = format;
+
     }
 
-    public int getPpm() {
-        return ppm;
-    }
-    public void setPpm(int ppm) {
-        this.ppm = ppm;
-    }
-    public String getRez() {
-        return rez;
-    }
-    public void setRez(String rez) {
-        this.rez = rez;
-    }
-    public int getP_car() {
-        return p_car;
-    }
-    public void setP_car(int p_car) {
-        this.p_car = p_car;
+    public int getP_ton() {
+        return p_ton;
     }
 
-    public boolean isColor() {
-        return color;
+    public void setP_ton(int p_ton) {
+        this.p_ton = p_ton;
     }
-    public void setColor(boolean color) {
-        this.color = color;
+
+    public String getFormat() {
+        return format;
     }
+
+    public void setFormat(String format) {
+        this.format = format;
+    }
+
+    @Override
+    public String getStare() {
+        return super.getStare();
+    }
+    @Override
+    public void setStare(String stare) {
+        super.setStare(stare);
+    }
+
+    @Override
+    public String toString() {
+        return this.getDenumire()+";"+this.getNr_inv()+";"+this.getPret()+";"+this.getZona_mag()+";"+this.getStare()+";"+this.getTip()+";"+this.p_ton+";"+this.format;
+    }
+
 }

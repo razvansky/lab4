@@ -1,43 +1,55 @@
 package p1;
 
-import p1.Echipamente;
-
-public class Imprimanta extends Echipamente{
-    private int ppm;
-    private String rez;
-    private int p_car;
-    private boolean color;
-    public Imprimanta(String nume, int nr_inv, float pret,String zona_inv,String stare,String tip,int ppm,String rez, int p_car,boolean color) {
+public class calc extends Echipamente{
+    private String tip_mon;
+    private float vit_proc;
+    private int c_hdd;
+    private String windows;
+    public calc(String nume, int nr_inv, float pret, String zona_inv, String stare, String tip, String tip_mon, float vit_proc, int c_hdd, String windows) {
         super(nume,nr_inv,pret,zona_inv,stare,tip);
-        this.ppm = ppm;
-        this.rez = rez;
-        this.p_car = p_car;
-        this.color = color;
+        this.tip_mon = tip_mon;
+        this.vit_proc = vit_proc;
+        this.c_hdd = c_hdd;
+        this.windows = windows;
     }
 
-    public int getPpm() {
-        return ppm;
+    public String getTip_mon() {
+        return tip_mon;
     }
-    public void setPpm(int ppm) {
-        this.ppm = ppm;
+    public void setTip_mon(String tip_mon) {
+        this.tip_mon = tip_mon;
     }
-    public String getRez() {
-        return rez;
+    public float getVit_proc() {
+        return vit_proc;
     }
-    public void setRez(String rez) {
-        this.rez = rez;
+    public void setVit_proc(float vit_proc) {
+        this.vit_proc = vit_proc;
     }
-    public int getP_car() {
-        return p_car;
+    public int getC_hdd() {
+        return c_hdd;
     }
-    public void setP_car(int p_car) {
-        this.p_car = p_car;
+    public void setC_hdd(int c_hdd) {
+        this.c_hdd = c_hdd;
+    }
+    public String getWindows() {
+        return windows;
+    }
+    public void setWindows(String windows) {
+        this.windows = windows;
     }
 
-    public boolean isColor() {
-        return color;
+    @Override
+    public String getStare() {
+        return super.getStare();
     }
-    public void setColor(boolean color) {
-        this.color = color;
+    @Override
+    public void setStare(String stare) {
+        super.setStare(stare);
     }
+
+    @Override
+    public String toString() {
+        return this.getDenumire()+";"+this.getNr_inv()+";"+this.getPret()+";"+this.getZona_mag()+";"+this.getStare()+";"+this.getTip()+";"+this.tip_mon+";"+this.vit_proc+";"+this.c_hdd+";"+this.windows;
+    }
+
 }
